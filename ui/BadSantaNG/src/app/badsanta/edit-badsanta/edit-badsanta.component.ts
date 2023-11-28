@@ -43,7 +43,7 @@ export class EditBadsantaComponent
     {
       BadSantaId:this.BadSantaId,
       BadSantaName:this.BadSantaName,
-      BadSantaPlace:this.BadSantaName,
+      BadSantaPlace:this.BadSantaPlace,
       Draw:this.Draw,
     }
 

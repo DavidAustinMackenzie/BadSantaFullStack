@@ -56,6 +56,7 @@ def badSantaApi(request, id=0):
     
     elif request.method=='PUT':
         badsanta_data = JSONParser().parse(request)
+        print(badsanta_data)
         badsanta = BadSantas.objects.get(BadSantaId=badsanta_data['BadSantaId'])
         badsantas_serializer = BadSantaSerializer(badsanta,data=badsanta_data)
         if badsantas_serializer.is_valid():

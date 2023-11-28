@@ -1,1 +1,30 @@
-<p>add-badsanta works!</p>
+<div class="container">
+    <form class="needs-validation">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Bad Santa Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="BadSantaName"
+                placeholder="Bad Santa Name" required>
+            </div>
+            <label class="col-sm-2 col-form-label">Bad Santa Place</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="BadSantaPlace"
+                placeholder="Bad Santa Place" required>
+            </div>
+            <label class="col-sm-2 col-form-label">Draw</label>
+            <div class="col-sm-10">
+                <select class="form-control" [(ngModel)]="Draw" required>
+                    <option>--Select--</option>
+                    <option *ngFor="let draw of DrawsList">{{draw.DrawTotal}}</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" (click)="addBadSanta()" class="btn btn-primary">
+            Add
+        </button>
+    </form>
+</div>
+
+
+
+
