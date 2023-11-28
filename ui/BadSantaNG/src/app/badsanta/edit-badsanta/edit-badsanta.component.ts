@@ -20,6 +20,9 @@ export class EditBadsantaComponent
 
   DrawsList:any=[]
 
+  errorMessages:string[] = []
+  successMessage?:string;
+
   ngOnInit(): void
   {
     this.loadDrawList();  
@@ -38,15 +41,52 @@ export class EditBadsantaComponent
     });
   }
 
-  updateBadSanta(){
-    var val = 
+  updateBadSanta()
+  {
+    if(this.BadSantaName === undefined || this.BadSantaName === "")
     {
-      BadSantaId:this.BadSantaId,
-      BadSantaName:this.BadSantaName,
-      BadSantaPlace:this.BadSantaPlace,
-      Draw:this.Draw,
+      if(!this.errorMessages.includes("Please enter a name!"))
+      {
+        this.errorMessages.push("Please enter a name!");
+      } 
+    }
+    else
+    {
+      if(this.errorMessages.includes("Please enter a name!"))
+      {
+        this.errorMessages = this.errorMessages.filter((e, i) => e !== "Please enter a name!"); 
+      }
     }
 
-    this.badSantaService.updateBadSanta(val).subscribe(result=>{alert(result.toString());});
+    if(this.Draw === undefined || this.Draw==="--Select--")
+    {
+      if(!this.errorMessages.includes("Please select a draw!"))
+      {
+        this.errorMessages.push("Please select a draw!");
+      } 
+    }
+    else
+    {
+      if(this.errorMessages.includes("Please select a draw!"))
+      {
+        this.errorMessages = this.errorMessages.filter((e, i) => e !== "Please select a draw!"); 
+      }
+    }
+
+    if(this.BadSantaName !== undefined &&
+      this.BadSantaName !== "" &&
+      this.Draw !== undefined &&
+      this.Draw !=="--Select--")
+      {
+        var val = 
+        {
+          BadSantaId:this.BadSantaId,
+          BadSantaName:this.BadSantaName,
+          BadSantaPlace:this.BadSantaPlace,
+          Draw:this.Draw,
+        }
+    
+        this.badSantaService.updateBadSanta(val).subscribe(result=>{this.successMessage = result.toString();});
+      }
   }
 }
