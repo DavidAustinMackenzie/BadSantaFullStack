@@ -19,7 +19,7 @@ export class DrawService
 
   updateDraw(val:any)
   {
-    return this.http.put<(this.APIUrl + this.Route,val);
+    return this.http.put(this.APIUrl + this.Route,val);
   }
 
   deleteDraw(val:any)
