@@ -15,6 +15,8 @@ export class ShowDrawComponent
   ActivateAddEditDrawComp:boolean=false;
   draw:any;
 
+  successMessage?:string;
+
   ngOnInit():void
   {
     this.refreshDrawList();
@@ -45,7 +47,7 @@ export class ShowDrawComponent
       this.drawService.deleteDraw(item.DrawId).subscribe(
         data=>
         {
-        alert(data.toString());
+        this.successMessage = data.toString();
         this.refreshDrawList();
       })
     }

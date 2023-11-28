@@ -15,6 +15,8 @@ export class ShowBadsantaComponent
   ActivateEditBadSantaComp:boolean=false;
   badSanta:any;  
 
+  successMessage?:string;
+  
   ngOnInit():void
   {
     this.refreshBadSantaList();
@@ -34,7 +36,7 @@ export class ShowBadsantaComponent
       this.badSantaService.deleteBadSanta(item.BadSantaId).subscribe(
         data=>
         {
-          alert(data.toString());
+          this.successMessage = data.toString();
           this.refreshBadSantaList();
         });
     }
@@ -44,6 +46,11 @@ export class ShowBadsantaComponent
   {
     this.ActivateEditBadSantaComp=false;
     this.refreshBadSantaList();
+  }
+
+  exportResults()
+  {
+    this.badSantaService.downloadFile(this.BadSantaList);
   }
 
   refreshBadSantaList()

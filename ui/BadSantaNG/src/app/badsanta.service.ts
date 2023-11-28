@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ngxCsv} from 'ngx-csv/ngx-csv'
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,16 @@ export class BadsantaService
   getBadSantaList():Observable<any[]>
   {
     return this.http.get<any[]>(this.APIUrl + this.Route);
+  }
+
+  downloadFile(data: any) 
+  {
+    console.log(data);
+    let options = {
+      title:'Bad Santa Draw List',
+      headers:['BadSantaId','BadSantaName','BadSantaPlace','Draw']
+    };
+
+    new ngxCsv(data,"Bad_Santa_List",options)
   }
 }

@@ -48,7 +48,8 @@ export class AddBadsantaComponent
 
   loadNumberList()
   {
-    this.badSantaService.getBadSantaList().subscribe((data:any)=>{
+    this.badSantaService.getBadSantaList().subscribe((data:any)=>
+    {
       this.BadSantaList = data;
 
       for(let badSanta of this.BadSantaList)
@@ -138,6 +139,8 @@ export class AddBadsantaComponent
       }
   
       this.badSantaService.addBadSanta(val).subscribe(result=>{this.successMessage = result.toString();});
+
+      this.loadNumberList();
     }    
   }
 

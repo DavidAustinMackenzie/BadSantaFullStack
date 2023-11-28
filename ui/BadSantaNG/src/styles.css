@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.container{
+  margin-top: 2%;
+}
+
 .place-number{
     width: 100px;
       height: 100px;
@@ -20,4 +24,20 @@
 .place-number.clicked{
     margin-top: 36px;
     box-shadow: 0 4px 0 #79a832;
+}
+
+.navbar{
+  background-color: #79a832;
+}
+
+.navbar ul li a{
+  color:black;
+}
+
+.page-header{
+  text-align: center;
+  color:black;
+  background-color: #79a832;
+  padding-top: 3%;
+  padding-bottom: 1%;
 }
