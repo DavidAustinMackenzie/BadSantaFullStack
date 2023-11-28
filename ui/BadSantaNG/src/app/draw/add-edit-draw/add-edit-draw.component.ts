@@ -16,6 +16,8 @@ export class AddEditDrawComponent
   DrawId?:string;
   DrawTotal?:string;
 
+  errorMessages:string[] = []
+  successMessage?:string;
   ngOnInit():void
   {
     this.DrawId = this.draw.DrawId;
@@ -24,25 +26,66 @@ export class AddEditDrawComponent
 
   addDraw()
   {
-    var val = 
+    if(this.DrawTotal === undefined || this.DrawTotal === "")
     {
-      DrawId:this.DrawId,
-      DrawTotal:this.DrawTotal      
+      if(!this.errorMessages.includes("Please enter a draw of total people!"))
+      {
+        this.errorMessages.push("Please enter a draw of total people!");
+      } 
     }
-    this.drawService.addDraw(val).subscribe(result=>{
-      alert(result.toString());
-    });
+    else
+    {
+      if(this.errorMessages.includes("Please enter a draw of total people!"))
+      {
+        this.errorMessages = this.errorMessages.filter((e, i) => e !== "Please enter a draw of total people!"); 
+      }
+    }
+
+    if(this.DrawTotal !== undefined &&
+      this.DrawTotal !== "")
+      {
+        var val = 
+        {
+          DrawId:this.DrawId,
+          DrawTotal:this.DrawTotal      
+        }
+        this.drawService.addDraw(val).subscribe(
+          result=>
+          {
+            this.successMessage = result.toString();
+        });
+      }
   }
 
   updateDraw()
   {
-    var val = 
+    if(this.DrawTotal === undefined || this.DrawTotal === "")
     {
-      DrawId:this.DrawId,
-      DrawTotal:this.DrawTotal      
+      if(!this.errorMessages.includes("Please enter a draw of total people!"))
+      {
+        this.errorMessages.push("Please enter a draw of total people!");
+      } 
     }
-    this.drawService.updateDraw(val).subscribe(result=>{
-      alert(result.toString());
-    });
+    else
+    {
+      if(this.errorMessages.includes("Please enter a draw of total people!"))
+      {
+        this.errorMessages = this.errorMessages.filter((e, i) => e !== "Please enter a draw of total people!"); 
+      }
+    }
+    
+    if(this.DrawTotal !== undefined &&
+      this.DrawTotal !== "")
+      {
+        var val = 
+        {
+          DrawId:this.DrawId,
+          DrawTotal:this.DrawTotal      
+        }
+        this.drawService.updateDraw(val).subscribe(result=>
+          {
+            this.successMessage = result.toString();
+        });
+      }
   }
 }
