@@ -28,6 +28,8 @@ import { AdminBadsantaComponent } from './admin-badsanta/admin-badsanta.componen
 import { AdminDrawComponent } from './admin-draw/admin-draw.component';
 import { AdminShowDrawComponent } from './admin-draw/admin-show-draw/admin-show-draw.component';
 import { AdminAddEditDrawComponent } from './admin-draw/admin-add-edit-draw/admin-add-edit-draw.component';
+import { AdminShowBadsantaComponent } from './admin-badsanta/admin-show-badsanta/admin-show-badsanta.component';
+import { AdminEditBadsantaComponent } from './admin-badsanta/admin-edit-badsanta/admin-edit-badsanta.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { AdminAddEditDrawComponent } from './admin-draw/admin-add-edit-draw/admi
     AdminBadsantaComponent,
     AdminDrawComponent,
     AdminShowDrawComponent,
-    AdminAddEditDrawComponent
+    AdminAddEditDrawComponent,
+    AdminShowBadsantaComponent,
+    AdminEditBadsantaComponent
   ],
   imports: [
     BrowserModule,

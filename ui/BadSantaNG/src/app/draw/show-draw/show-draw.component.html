@@ -34,14 +34,12 @@
         <table datatable class="table table-striped table-hover" *ngIf="DrawList?.length">
             <thead>
                 <tr>
-                    <th>DrawId</th>
                     <th>Total People</th>
                     <th>Update</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let draw of DrawList">
-                    <td>{{draw.DrawId}}</td>
                     <td>{{draw.DrawTotal}}</td>
                     <td>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" 

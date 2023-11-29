@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { BadsantaService } from '../../badsanta.service';
 
 @Component({
-  selector: 'app-show-badsanta',
-  templateUrl: './show-badsanta.component.html',
-  styleUrl: './show-badsanta.component.css'
+  selector: 'app-admin-show-badsanta',
+  templateUrl: './admin-show-badsanta.component.html',
+  styleUrl: './admin-show-badsanta.component.css'
 })
-
-export class ShowBadsantaComponent 
+export class AdminShowBadsantaComponent 
 {
   constructor(private badSantaService:BadsantaService){}
 
