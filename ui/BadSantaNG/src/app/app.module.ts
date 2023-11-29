@@ -16,6 +16,18 @@ import { DrawService } from './draw.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DataTablesModule } from 'angular-datatables';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule} from '@angular/material/input';
+import { AdminBadsantaComponent } from './admin-badsanta/admin-badsanta.component';
+import { AdminDrawComponent } from './admin-draw/admin-draw.component';
+import { AdminShowDrawComponent } from './admin-draw/admin-show-draw/admin-show-draw.component';
+import { AdminAddEditDrawComponent } from './admin-draw/admin-add-edit-draw/admin-add-edit-draw.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +38,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BadsantaComponent,
     ShowBadsantaComponent,
     AddBadsantaComponent,
-    EditBadsantaComponent
+    EditBadsantaComponent,
+    AdminBadsantaComponent,
+    AdminDrawComponent,
+    AdminShowDrawComponent,
+    AdminAddEditDrawComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +50,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    DataTablesModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

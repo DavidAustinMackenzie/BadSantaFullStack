@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { BadsantaService } from '../../badsanta.service';
+
+export interface BadSantaData{
+  BadSantaName: string;
+  BadSantaPlace: string;
+  Draw: string;
+}
 
 @Component({
   selector: 'app-show-badsanta',
   templateUrl: './show-badsanta.component.html',
   styleUrl: './show-badsanta.component.css'
 })
+
 export class ShowBadsantaComponent 
 {
   constructor(private badSantaService:BadsantaService){}
@@ -56,7 +63,7 @@ export class ShowBadsantaComponent
   refreshBadSantaList()
   {
     this.badSantaService.getBadSantaList().subscribe(
-      data=>
+      (data: any)=>
       {
         this.BadSantaList=data;
       });

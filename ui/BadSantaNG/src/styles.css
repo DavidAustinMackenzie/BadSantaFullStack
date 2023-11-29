@@ -38,10 +38,24 @@
   text-align: center;
   color:black;
   background-color: #79a832;
-  padding-top: 3%;
+  padding-top: 2%;
   padding-bottom: 1%;
+  font-size: larger;
 }
 
 .form-group ul li{
   list-style: none;
 }
+
+.padding-bottom{
+  padding-bottom: 1%;
+}
+
+.page-header h1{
+  font-size: xx-large;
+}
+
+.page-header h3{
+  font-size: x-large;
+}
+
