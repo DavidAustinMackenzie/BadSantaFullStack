@@ -13,6 +13,9 @@
                 <li >{{message}}</li>
             </ul>
         </div>
+        <div class="alert alert-success" *ngIf="successMessage">
+            {{successMessage}}
+        </div>
         <label class="col-sm-2 col-form-label">Bad Santa Name</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" [(ngModel)]="BadSantaName"
@@ -30,9 +33,6 @@
             (mouseup)="onMouseup()" [class.clicked]="clicked">
                 {{BadSantaPlace}}
             </div>
-        </div>
-        <div class="alert alert-success" *ngIf="successMessage">
-            {{successMessage}}
         </div>
     </div>
 </div>
