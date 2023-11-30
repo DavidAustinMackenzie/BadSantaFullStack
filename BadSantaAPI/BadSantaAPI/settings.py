@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     'rest_framework'
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ORGIN_WHITELIST = (
+    'http://localhost:8000'
+)
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
