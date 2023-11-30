@@ -45,7 +45,10 @@ INSTALLED_APPS = [
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORGIN_WHITELIST = (
-    'http://localhost:8000'
+    'http://localhost:8000',
+    'http://localhost:4200',
+    'http://3.26.177.158:4200',
+    'http://3.26.177.158:8000',
 )
 
 MIDDLEWARE = [
