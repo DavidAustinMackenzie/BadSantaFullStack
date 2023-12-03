@@ -44,20 +44,16 @@ export class AddEditDrawComponent
     if(this.DrawTotal !== undefined &&
       this.DrawTotal !== "")
       {
-        alert('Add Draw!');
         var val = 
         {
           DrawId:this.DrawId,
           DrawTotal:this.DrawTotal      
         }
-        alert('Before AddDraw');
         this.drawService.addDraw(val).subscribe(
           result=>
           {
             this.successMessage = result.toString();
-            alert(result.toString());
         });
-        alert('After AddDraw');
       }
   }
 
