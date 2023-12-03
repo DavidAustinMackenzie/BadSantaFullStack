@@ -50,12 +50,14 @@ export class AddEditDrawComponent
           DrawId:this.DrawId,
           DrawTotal:this.DrawTotal      
         }
+        alert('Before AddDraw');
         this.drawService.addDraw(val).subscribe(
           result=>
           {
             this.successMessage = result.toString();
             alert(result.toString());
         });
+        alert('After AddDraw');
       }
   }
 
