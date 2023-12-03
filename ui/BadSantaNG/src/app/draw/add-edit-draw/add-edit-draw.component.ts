@@ -44,6 +44,7 @@ export class AddEditDrawComponent
     if(this.DrawTotal !== undefined &&
       this.DrawTotal !== "")
       {
+        alert('Add Draw!');
         var val = 
         {
           DrawId:this.DrawId,
