@@ -64,7 +64,7 @@ import { AdminEditBadsantaComponent } from './admin-badsanta/admin-edit-badsanta
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/3.26.177.158'}],
+  providers: [{provide: APP_BASE_HREF, useValue: ''}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
