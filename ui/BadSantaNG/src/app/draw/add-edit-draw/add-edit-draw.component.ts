@@ -53,6 +53,10 @@ export class AddEditDrawComponent
           result=>
           {
             this.successMessage = result.toString();
+        },err=>{
+          console.log(err.message);
+        }, ()=>{
+          console.log('completed');
         });
       }
   }

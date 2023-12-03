@@ -138,7 +138,13 @@ export class AddBadsantaComponent
         Draw:this.Draw,
       }
   
-      this.badSantaService.addBadSanta(val).subscribe(result=>{this.successMessage = result.toString();});
+      this.badSantaService.addBadSanta(val).subscribe(result=>{
+        this.successMessage = result.toString();
+      }, err=> {
+        console.log(err.message);
+      }, ()=>{
+        console.log('completed');
+      });
 
       this.loadNumberList();
     }    
