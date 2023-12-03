@@ -53,6 +53,7 @@ export class AddEditDrawComponent
           result=>
           {
             this.successMessage = result.toString();
+            alert(result.toString());
         });
       }
   }
