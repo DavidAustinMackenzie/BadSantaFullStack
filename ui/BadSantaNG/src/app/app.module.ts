@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { APP_BASE_HREF } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -63,7 +64,7 @@ import { AdminEditBadsantaComponent } from './admin-badsanta/admin-edit-badsanta
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/3.26.177.158'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
