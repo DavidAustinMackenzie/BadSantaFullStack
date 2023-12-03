@@ -60,6 +60,11 @@ export class ShowBadsantaComponent
       (data: any)=>
       {
         this.BadSantaList=data;
+      }, err=>{
+        console.log(err.message);
+      },
+      ()=>{
+        console.log('completed');
       });
   }
 }

@@ -65,6 +65,11 @@ export class ShowDrawComponent
     data=>
       {
       this.DrawList = data;
+    }, err=> {
+      console.log(err.message);
+    },
+    ()=>{
+      console.log('completed');
     });
   }
 
