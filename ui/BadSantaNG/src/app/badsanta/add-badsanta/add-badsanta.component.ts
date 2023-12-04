@@ -29,8 +29,10 @@ export class AddBadsantaComponent
 
   ngOnInit(): void
   {
+    alert('ngOnInit():Before load numbers!');
     this.loadDrawList();  
     this.loadNumberList();
+    alert('ngOnInit():After load numbers!');
   }
 
   loadDrawList()
