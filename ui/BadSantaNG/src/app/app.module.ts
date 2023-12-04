@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { APP_BASE_HREF } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,11 +19,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DataTablesModule } from 'angular-datatables';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatTableModule} from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule} from '@angular/material/input';
 import { AdminBadsantaComponent } from './admin-badsanta/admin-badsanta.component';
 import { AdminDrawComponent } from './admin-draw/admin-draw.component';
 import { AdminShowDrawComponent } from './admin-draw/admin-show-draw/admin-show-draw.component';
@@ -58,13 +52,8 @@ import { AdminEditBadsantaComponent } from './admin-badsanta/admin-edit-badsanta
     NgbModule,
     DataTablesModule,
     BrowserAnimationsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatFormFieldModule,
-    MatInputModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '.'}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
