@@ -15,7 +15,6 @@ export class BadsantaService
 
   addBadSanta(val:any)
   {
-    alert(this.http.get(this.APIUrl + this.Route));
     return this.http.post(this.APIUrl + this.Route,val);
   }
   
