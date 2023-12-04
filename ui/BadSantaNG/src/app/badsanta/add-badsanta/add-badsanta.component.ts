@@ -54,6 +54,7 @@ export class AddBadsantaComponent
 
   loadNumberList()
   {
+    alert('Before load numbers!');
     this.badSantaService.getBadSantaList().subscribe((data:any)=>
     {
       this.BadSantaList = data;
@@ -69,6 +70,7 @@ export class AddBadsantaComponent
     ()=>{
       console.log('completed');
     });
+    alert('After load numbers!');
   }
 
   addBadSanta()
