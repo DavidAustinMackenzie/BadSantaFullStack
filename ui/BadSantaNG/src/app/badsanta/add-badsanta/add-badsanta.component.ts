@@ -38,12 +38,6 @@ export class AddBadsantaComponent
     this.drawService.getDrawList().subscribe((data:any)=>
     {
       this.DrawsList=data;
-      console.log(this.DrawsList);
-
-      this.BadSantaId=this.badSanta.BadSantaId;
-      this.BadSantaName=this.badSanta.BadSantaName;
-      this.BadSantaPlace=this.badSanta.BadSantaPlace;
-      this.Draw=this.badSanta.Draw;
     }, err=>{
       console.log(err.message);
     },
