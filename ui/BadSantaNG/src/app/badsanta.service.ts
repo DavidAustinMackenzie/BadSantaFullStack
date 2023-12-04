@@ -8,7 +8,7 @@ import { ngxCsv} from 'ngx-csv/ngx-csv'
 })
 export class BadsantaService 
 {
-  readonly APIUrl = "http://3.26.178.150:9000"
+  readonly APIUrl = "http://3.26.177.158:8000"
   readonly Route = '/badsanta/'
 
   constructor(private http:HttpClient) { }
