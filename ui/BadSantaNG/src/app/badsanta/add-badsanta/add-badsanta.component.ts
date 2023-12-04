@@ -44,6 +44,11 @@ export class AddBadsantaComponent
       this.BadSantaName=this.badSanta.BadSantaName;
       this.BadSantaPlace=this.badSanta.BadSantaPlace;
       this.Draw=this.badSanta.Draw;
+    }, err=>{
+      console.log(err.message);
+    },
+    ()=>{
+      console.log('completed');
     });
   }
 
@@ -58,6 +63,11 @@ export class AddBadsantaComponent
         this.numbers.push(badSanta.BadSantaPlace);
         this.names.push(badSanta.BadSantaName);
       }
+    }, err=>{
+      console.log(err.message);
+    },
+    ()=>{
+      console.log('completed');
     });
   }
 
