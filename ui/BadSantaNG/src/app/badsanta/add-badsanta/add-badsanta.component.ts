@@ -29,10 +29,8 @@ export class AddBadsantaComponent
 
   ngOnInit(): void
   {
-    alert('ngOnInit():Before load numbers!');
     this.loadDrawList();  
     this.loadNumberList();
-    alert('ngOnInit():After load numbers!');
   }
 
   loadDrawList()
@@ -56,7 +54,6 @@ export class AddBadsantaComponent
 
   loadNumberList()
   {
-    alert('Before load numbers!');
     this.badSantaService.getBadSantaList().subscribe((data:any)=>
     {
       this.BadSantaList = data;
@@ -70,9 +67,8 @@ export class AddBadsantaComponent
       console.log(err.message);
     },
     ()=>{
-      console.log('completed');
+      console.log('completed loadNumberList()');
     });
-    alert('After load numbers!');
   }
 
   addBadSanta()
