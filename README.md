@@ -5,6 +5,8 @@
 
 copy /browser/* to /var/www/html for hosting
 
+sudo service nginx restart
+
 # Run Django Backend
 
 activate venv
