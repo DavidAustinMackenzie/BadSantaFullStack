@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class DrawService 
 {
-  readonly APIUrl = "http://3.26.177.158:8000"
+  readonly APIUrl = "http://3.24.178.150:9000"
   readonly Route = '/draw/'
 
   constructor(private http:HttpClient) { }
