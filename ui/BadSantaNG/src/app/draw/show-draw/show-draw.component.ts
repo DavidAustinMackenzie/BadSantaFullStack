@@ -69,7 +69,7 @@ export class ShowDrawComponent
       console.log(err.message);
     },
     ()=>{
-      console.log('completed');
+      console.log('completed getDrawList()');
     });
   }
 

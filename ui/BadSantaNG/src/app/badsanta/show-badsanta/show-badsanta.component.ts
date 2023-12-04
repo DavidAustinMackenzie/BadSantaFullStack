@@ -64,7 +64,7 @@ export class ShowBadsantaComponent
         console.log(err.message);
       },
       ()=>{
-        console.log('completed');
+        console.log('completed getBadSantaList()');
       });
   }
 }

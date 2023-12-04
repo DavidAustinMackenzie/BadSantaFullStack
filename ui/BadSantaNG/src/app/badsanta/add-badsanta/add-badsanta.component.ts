@@ -48,7 +48,7 @@ export class AddBadsantaComponent
       console.log(err.message);
     },
     ()=>{
-      console.log('completed');
+      console.log('completed getDrawList()');
     });
   }
 
@@ -67,7 +67,7 @@ export class AddBadsantaComponent
       console.log(err.message);
     },
     ()=>{
-      console.log('completed loadNumberList()');
+      console.log('completed getBadSantaList()');
     });
   }
 
@@ -154,7 +154,7 @@ export class AddBadsantaComponent
       }, err=> {
         console.log(err.message);
       }, ()=>{
-        console.log('completed');
+        console.log('completed addBadSanta()');
       });
 
       this.loadNumberList();
