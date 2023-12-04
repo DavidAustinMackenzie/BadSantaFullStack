@@ -1,4 +1,13 @@
 # BadSantaFullStack
-#Run Angular FrontEnd
+# Run Angular FrontEnd
 
-/BadSantaFullStack/ui/BadSantaNG/ng serve --host 0.0.0.0
+/BadSantaFullStack/ui/BadSantaNG/ng build --output-path docs
+
+copy /browser/* to /var/www/html for hosting
+
+# Run Django Backend
+
+activate venv
+
+# Run the service in the background
+gunicorn --bind 0.0.0.0:9000 BadSantaAPI.wsgi &
