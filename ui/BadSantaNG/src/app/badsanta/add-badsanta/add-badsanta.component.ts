@@ -112,7 +112,7 @@ export class AddBadsantaComponent
       }
     }
 
-    if(this.DrawsList.Length === undefined)
+    if(this.DrawsList.length === undefined)
     {
       if(!this.errorMessages.includes("Please add at least one Draw!"))
       {
@@ -123,7 +123,6 @@ export class AddBadsantaComponent
     {
       if(this.numbers.length < parseInt(this.Draw!))
       {
-        console.log(this.DrawsList.Length);
         if(this.errorMessages.includes("Cannot generate anymore bad santas, bad santa list is full!"))
         {
           this.errorMessages = this.errorMessages.filter((e, i) => e !== "Cannot generate anymore bad santas, bad santa list is full!"); 
@@ -131,7 +130,6 @@ export class AddBadsantaComponent
       }
       else
       {
-        console.log(this.DrawsList.Length);
         if(!this.errorMessages.includes("Cannot generate anymore bad santas, bad santa list is full!"))
         {
           this.errorMessages.push("Cannot generate anymore bad santas, bad santa list is full!");
