@@ -112,21 +112,33 @@ export class AddBadsantaComponent
       }
     }
 
-    if(this.numbers.length < parseInt(this.Draw!))
+    if(this.DrawsList.Length === undefined)
     {
-      if(this.errorMessages.includes("Cannot generate anymore bad santas, bad santa list is full!"))
+      if(!this.errorMessages.includes("Please add at least one Draw!"))
       {
-        this.errorMessages = this.errorMessages.filter((e, i) => e !== "Cannot generate anymore bad santas, bad santa list is full!"); 
-      }
+        this.errorMessages.push("Please add at least one Draw!");
+      } 
     }
     else
     {
-       if(!this.errorMessages.includes("Cannot generate anymore bad santas, bad santa list is full!"))
+      if(this.numbers.length < parseInt(this.Draw!))
       {
-        this.errorMessages.push("Cannot generate anymore bad santas, bad santa list is full!");
-      } 
+        console.log(this.DrawsList.Length);
+        if(this.errorMessages.includes("Cannot generate anymore bad santas, bad santa list is full!"))
+        {
+          this.errorMessages = this.errorMessages.filter((e, i) => e !== "Cannot generate anymore bad santas, bad santa list is full!"); 
+        }
+      }
+      else
+      {
+        console.log(this.DrawsList.Length);
+        if(!this.errorMessages.includes("Cannot generate anymore bad santas, bad santa list is full!"))
+        {
+          this.errorMessages.push("Cannot generate anymore bad santas, bad santa list is full!");
+        } 
+      }
     }
-    
+   
     if(!this.names.includes(this.BadSantaName) &&
       this.BadSantaName !== undefined &&
       this.BadSantaName !== "" &&
