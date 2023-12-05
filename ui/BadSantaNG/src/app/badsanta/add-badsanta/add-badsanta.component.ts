@@ -110,6 +110,21 @@ export class AddBadsantaComponent
       {
         this.errorMessages = this.errorMessages.filter((e, i) => e !== "Please select a draw!"); 
       }
+
+      if(this.numbers.length < parseInt(this.Draw!))
+        {
+          if(this.errorMessages.includes("Cannot generate anymore bad santas, bad santa list is full!"))
+          {
+            this.errorMessages = this.errorMessages.filter((e, i) => e !== "Cannot generate anymore bad santas, bad santa list is full!"); 
+          }
+        }
+        else
+        {
+          if(!this.errorMessages.includes("Cannot generate anymore bad santas, bad santa list is full!"))
+          {
+            this.errorMessages.push("Cannot generate anymore bad santas, bad santa list is full!");
+          } 
+        }
     }
 
     if(this.DrawsList.length === undefined ||
@@ -122,22 +137,12 @@ export class AddBadsantaComponent
     }
     else
     {
-      if(this.numbers.length < parseInt(this.Draw!))
+      if(this.errorMessages.includes("Please add at least one Draw!"))
       {
-        if(this.errorMessages.includes("Cannot generate anymore bad santas, bad santa list is full!"))
-        {
-          this.errorMessages = this.errorMessages.filter((e, i) => e !== "Cannot generate anymore bad santas, bad santa list is full!"); 
-        }
-      }
-      else
-      {
-        if(!this.errorMessages.includes("Cannot generate anymore bad santas, bad santa list is full!"))
-        {
-          this.errorMessages.push("Cannot generate anymore bad santas, bad santa list is full!");
-        } 
+        this.errorMessages = this.errorMessages.filter((e, i) => e !== "Please add at least one Draw!"); 
       }
     }
-   
+      
     if(!this.names.includes(this.BadSantaName) &&
       this.BadSantaName !== undefined &&
       this.BadSantaName !== "" &&
