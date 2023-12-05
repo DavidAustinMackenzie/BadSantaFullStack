@@ -112,7 +112,8 @@ export class AddBadsantaComponent
       }
     }
 
-    if(this.DrawsList.length === undefined)
+    if(this.DrawsList.length === undefined ||
+      this.DrawsList.length === 0)
     {
       if(!this.errorMessages.includes("Please add at least one Draw!"))
       {
