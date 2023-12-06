@@ -67,6 +67,8 @@ export class AddBadsantaComponent
 
   addBadSanta()
   {
+    this.successMessage = "";
+
     if(this.names.includes(this.BadSantaName))
     {
       if(!this.errorMessages.includes("Name already exists, please enter a new name!"))
@@ -142,12 +144,8 @@ export class AddBadsantaComponent
         this.errorMessages = this.errorMessages.filter((e, i) => e !== "Please add at least one Draw!"); 
       }
     }
-      
-    if(!this.names.includes(this.BadSantaName) &&
-      this.BadSantaName !== undefined &&
-      this.BadSantaName !== "" &&
-      this.Draw !== undefined &&
-      this.numbers.length < parseInt(this.Draw!))
+
+    if(this.errorMessages.length == 0)
     {
       var randomNumber = this.getUniqueRandomNumber();
       this.BadSantaPlace = randomNumber;
@@ -159,13 +157,15 @@ export class AddBadsantaComponent
         Draw:this.Draw,
       }
   
-      this.badSantaService.addBadSanta(val).subscribe(result=>{
+      this.badSantaService.addBadSanta(val).subscribe(result=>
+      {
         this.successMessage = result.toString();
       }, err=> {
         console.log(err.message);
       }, ()=>{
         console.log('completed addBadSanta()');
       });
+
 
       this.loadNumberList();
     }    

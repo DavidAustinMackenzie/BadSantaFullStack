@@ -25,6 +25,7 @@ export class AdminAddEditDrawComponent
 
   addDraw()
   {
+    this.successMessage = "";
     if(this.DrawTotal === undefined || this.DrawTotal === "")
     {
       if(!this.errorMessages.includes("Please enter a draw of total people!"))
@@ -40,8 +41,7 @@ export class AdminAddEditDrawComponent
       }
     }
 
-    if(this.DrawTotal !== undefined &&
-      this.DrawTotal !== "")
+    if(this.errorMessages.length == 0)
       {
         var val = 
         {
@@ -58,6 +58,7 @@ export class AdminAddEditDrawComponent
 
   updateDraw()
   {
+    this.successMessage = "";
     if(this.DrawTotal === undefined || this.DrawTotal === "")
     {
       if(!this.errorMessages.includes("Please enter a draw of total people!"))
@@ -73,8 +74,7 @@ export class AdminAddEditDrawComponent
       }
     }
     
-    if(this.DrawTotal !== undefined &&
-      this.DrawTotal !== "")
+    if(this.errorMessages.length == 0)
       {
         var val = 
         {

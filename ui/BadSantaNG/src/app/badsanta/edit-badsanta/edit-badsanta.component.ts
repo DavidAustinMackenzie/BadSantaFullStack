@@ -43,6 +43,8 @@ export class EditBadsantaComponent
 
   updateBadSanta()
   {
+    this.successMessage = "";
+
     if(this.BadSantaName === undefined || this.BadSantaName === "")
     {
       if(!this.errorMessages.includes("Please enter a name!"))
@@ -73,10 +75,7 @@ export class EditBadsantaComponent
       }
     }
 
-    if(this.BadSantaName !== undefined &&
-      this.BadSantaName !== "" &&
-      this.Draw !== undefined &&
-      this.Draw !=="--Select--")
+    if(this.errorMessages.length == 0)
       {
         var val = 
         {
