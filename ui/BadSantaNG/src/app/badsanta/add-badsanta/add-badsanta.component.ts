@@ -166,6 +166,7 @@ export class AddBadsantaComponent
         console.log('completed addBadSanta()');
       });
 
+      this.names.push(this.BadSantaName);
 
       this.loadNumberList();
     }    
